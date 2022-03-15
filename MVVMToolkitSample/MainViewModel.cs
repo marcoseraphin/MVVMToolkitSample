@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -24,6 +24,7 @@ namespace MVVMToolkitSample
             await UserDialogs.Instance.AlertAsync("Pressed Save for " + this.FullName);
         }
 
+        // ctor
         public MainViewModel()
         {
             this.firstName = "Marco";
