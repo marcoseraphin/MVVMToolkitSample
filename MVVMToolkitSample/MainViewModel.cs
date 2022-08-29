@@ -9,16 +9,16 @@ namespace MVVMToolkitSample
     public partial class MainViewModel : ObservableObject
     {
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(FullName))]
+        [NotifyPropertyChangedFor(nameof(FullName))]
         private string? firstName;
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(FullName))]
+        [NotifyPropertyChangedFor(nameof(FullName))]
         private string? lastName;
 
         public string? FullName => $"{FirstName} {LastName}";
 
-        [ICommand]
+        [RelayCommand]
         public async Task Save()
         {
             await UserDialogs.Instance.AlertAsync("Pressed Save for " + this.FullName);
