@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ItemGroup>
-	<!--Specify Compiler for Mac Builds-->
-	<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.4.0">
-		<PrivateAssets>all</PrivateAssets>
-		<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-	</PackageReference>
-</ItemGroup>
+<Project>
+	<ItemGroup>
+		<!--Specify Compiler for Mac Builds-->
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.4.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
