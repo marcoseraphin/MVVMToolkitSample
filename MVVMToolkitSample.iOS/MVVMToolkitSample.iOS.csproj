@@ -69,6 +69,13 @@
     <LangVersion>default</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <!--Specify Compiler for Mac Builds-->
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.4.0">
+         <PrivateAssets>all</PrivateAssets>
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+</ItemGroup>
+  <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
