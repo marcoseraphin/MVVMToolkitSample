@@ -10,6 +10,7 @@ namespace MVVMToolkitSample
     {
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(FullName))]
+        [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
         private string? firstName;
 
         [ObservableProperty]
@@ -18,10 +19,15 @@ namespace MVVMToolkitSample
 
         public string? FullName => $"{FirstName} {LastName}";
 
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CheckName))]
         public async Task Save()
         {
             await UserDialogs.Instance.AlertAsync("Pressed Save for " + this.FullName);
+        }
+
+        private bool CheckName()
+        {
+            return FirstName == "Marco";
         }
 
         // ctor
