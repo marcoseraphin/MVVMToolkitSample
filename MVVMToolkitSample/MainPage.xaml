@@ -12,7 +12,7 @@
             <Entry Text="{Binding FirstName}" />
             <Entry Text="{Binding LastName}" />
             <Label Text="{Binding FullName}" Margin="0,20,0,0" />
-            <Button Text="Save" Command="{Binding SaveCommand}" />
+            <Button Text="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding FullName}" />
         </StackLayout>
 
     </StackLayout>

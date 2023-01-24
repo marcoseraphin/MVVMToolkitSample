@@ -20,21 +20,26 @@ namespace MVVMToolkitSample
         public string? FullName => $"{FirstName} {LastName}";
 
         [RelayCommand(CanExecute = nameof(CheckName))]
-        public async Task Save()
+        public async Task Save(string saveName)
         {
-            await UserDialogs.Instance.AlertAsync("Pressed Save for " + this.FullName);
+            await UserDialogs.Instance.AlertAsync("Pressed Save for " + saveName);
         }
 
-        private bool CheckName()
+        private bool CheckName(string saveName)
         {
-            return FirstName == "Marco";
+            if (saveName != null)
+            {
+                return saveName == "Peter Jackson";
+            }
+
+            return false;
         }
 
         // ctor
         public MainViewModel()
         {
-            this.firstName = "Marco";
-            this.lastName = "Seraphin";
+            this.firstName = "Peter";
+            this.lastName = "Jackson";
         }
     }
 }
